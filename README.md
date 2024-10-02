@@ -58,9 +58,9 @@ MySingle Next.JS Generic Toolkit is a versatile and reusable library designed to
 Install the package via npm or yarn:
 
 ```bash
-npm install nextjs-generic-views
+npm install @mysingle/api-client
 # or
-yarn add nextjs-generic-views
+yarn add @mysingle/api-client
 ```
 
 ## Configuration
@@ -104,39 +104,7 @@ const apiConfig: ApiConfig = {
 export default apiConfig;
 ```
 
-### LayoutConfig
 
-Define your layout configuration including site name, logo, navigation items, and user menu items.
-
-```typescript
-// src/config/layoutConfig.ts
-import React from 'react';
-import { Home, Users, Settings } from 'lucide-react';
-import LayoutBuilder from 'nextjs-generic-views/components/genericLayout';
-
-const navItems = [
-  { label: 'Home', href: '/', icon: <Home /> },
-  { label: 'Users', href: '/users', icon: <Users /> },
-  { label: 'Settings', href: '/settings', icon: <Settings /> },
-  // Add more navigation items as needed
-];
-
-const userMenuItems = [
-  { label: 'Profile', onClick: () => console.log('Profile clicked') },
-  { label: 'Logout', onClick: () => console.log('Logout clicked') },
-  // Add more user menu items as needed
-];
-
-const layoutConfig = {
-  siteName: 'MySingle',
-  logo: '/logo.svg', // Path to your logo image
-  navItems,
-  userMenuItems,
-  // font: inter, // Optional: Add custom font if needed
-};
-
-export default layoutConfig;
-```
 
 ## Usage
 
@@ -221,174 +189,6 @@ const UserProfile: React.FC = () => {
 export default UserProfile;
 ```
 
-### GenericView Component
-
-The `GenericView` component provides a flexible way to display data in different formats such as dashboards, lists, and detailed views.
-
-#### Props
-
-- **schema**: `z.ZodTypeAny` - A Zod schema for data validation.
-- **fields**: `Field<z.infer<T>>[]` - An array of field definitions specifying how to render each field.
-- **viewType**: `ViewType` - The type of view to render (`'dashboard' | 'list' | 'detail'`).
-- **data**: `z.infer<T> | z.infer<T>[]` - The data to display, either a single object or an array of objects.
-- **onSave**: `(data: z.infer<T>) => void` (optional) - A callback function to handle data saving in detail view.
-- **dashboardCards**: `DashboardCard[]` (optional) - An array of dashboard card definitions.
-
-#### Usage Example
-
-```typescript
-// src/components/Dashboard.tsx
-'use client';
-
-import React from 'react';
-import { GenericView } from 'nextjs-generic-views';
-import * as z from 'zod';
-import { Field, DashboardCard } from 'nextjs-generic-views/types/genericView';
-import { SomeIcon, AnotherIcon } from 'lucide-react';
-
-// Define your data schema using Zod
-const userSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  email: z.string().email(),
-  // Add other fields as needed
-});
-
-// Define fields for the GenericView
-const fields: Field<typeof userSchema>[] = [
-  { name: 'name', label: 'Name', type: 'text' },
-  { name: 'email', label: 'Email', type: 'email' },
-  // Add other fields as needed
-];
-
-// Define dashboard cards
-const dashboardCards: DashboardCard[] = [
-  { title: 'Total Users', value: 1500, icon: <SomeIcon /> },
-  { title: 'Active Users', value: 1234, icon: <AnotherIcon /> },
-  // Add more cards as needed
-];
-
-// Example data
-const data = [
-  { id: '1', name: 'Alice', email: 'alice@example.com' },
-  { id: '2', name: 'Bob', email: 'bob@example.com' },
-  // Add more data as needed
-];
-
-const Dashboard: React.FC = () => {
-  const handleSave = (updatedData: typeof userSchema._output) => {
-    console.log('Data saved:', updatedData);
-    // Implement your save logic here
-  };
-
-  return (
-    <GenericView
-      schema={userSchema}
-      fields={fields}
-      viewType="dashboard"
-      data={data}
-      dashboardCards={dashboardCards}
-      onSave={handleSave} // Optional for detail view
-    />
-  );
-};
-
-export default Dashboard;
-```
-
-### LayoutBuilder Component
-
-The `LayoutBuilder` component provides a consistent layout for your Next.js application, including a responsive header, sidebar, and footer. It also integrates theme toggling functionality.
-
-#### Configuration
-
-Define your layout configuration including site name, logo, navigation items, and user menu items.
-
-```typescript
-// src/config/layoutConfig.ts
-import React from 'react';
-import { Home, Users, Settings } from 'lucide-react';
-import LayoutBuilder from 'nextjs-generic-views/components/genericLayout';
-
-const navItems = [
-  { label: 'Home', href: '/', icon: <Home /> },
-  { label: 'Users', href: '/users', icon: <Users /> },
-  { label: 'Settings', href: '/settings', icon: <Settings /> },
-  // Add more navigation items as needed
-];
-
-const userMenuItems = [
-  { label: 'Profile', onClick: () => console.log('Profile clicked') },
-  { label: 'Logout', onClick: () => console.log('Logout clicked') },
-  // Add more user menu items as needed
-];
-
-const layoutConfig = {
-  siteName: 'MySingle',
-  logo: '/logo.svg', // Path to your logo image
-  navItems,
-  userMenuItems,
-  // font: inter, // Optional: Add custom font if needed
-};
-
-export default layoutConfig;
-```
-
-#### Usage Example
-
-Use the `LayoutBuilder` component in your Next.js layout file to provide a consistent layout across your application.
-
-```typescript
-// src/app/layout.tsx
-'use client';
-
-import React from 'react';
-import LayoutBuilder from 'nextjs-generic-views/components/genericLayout';
-import layoutConfig from '@/config/layoutConfig';
-
-const layoutBuilder = new LayoutBuilder(layoutConfig);
-
-const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <layoutBuilder.Layout>{children}</layoutBuilder.Layout>;
-};
-
-export default RootLayout;
-```
-
-### useToast Hook
-
-The `useToast` hook provides a simple and customizable way to display toast notifications in your application.
-
-#### Usage Example
-
-```typescript
-// src/components/NotificationExample.tsx
-'use client';
-
-import React from 'react';
-import { useToast } from 'nextjs-generic-views';
-import { Button } from '@/components/ui/button';
-
-const NotificationExample: React.FC = () => {
-  const { toast } = useToast();
-
-  const showToast = () => {
-    toast({
-      title: 'Notification',
-      description: 'This is a sample toast notification.',
-      // Add more properties as needed
-    });
-  };
-
-  return (
-    <div>
-      <Button onClick={showToast}>Show Toast</Button>
-    </div>
-  );
-};
-
-export default NotificationExample;
-```
 
 ## API Reference
 
@@ -454,121 +254,7 @@ The `ApiClient` class provides methods to interact with your API, handle authent
   const response = await apiClient.delete<ResponseType>('/endpoint');
   ```
 
-### GenericView Props
 
-The `GenericView` component accepts the following props:
-
-- **schema**: `z.ZodTypeAny` - A Zod schema for validating and inferring data types.
-- **fields**: `Field<z.infer<T>>[]` - An array of field definitions.
-- **viewType**: `ViewType` - The type of view to render (`'dashboard' | 'list' | 'detail'`).
-- **data**: `z.infer<T> | z.infer<T>[]` - The data to display.
-- **onSave**: `(data: z.infer<T>) => void` (optional) - A callback function for saving data in detail view.
-- **dashboardCards**: `DashboardCard[]` (optional) - An array of dashboard card definitions.
-
-#### Type Definitions
-
-```typescript
-// types/genericView.d.ts
-
-import { Path } from 'react-hook-form';
-import * as z from 'zod';
-
-export type ViewType = 'dashboard' | 'list' | 'detail';
-
-export type SelectOption = {
-  value: string;
-  label: string;
-};
-
-export type Field<T> = {
-  name: Path<T>;
-  label: string;
-  type: 'text' | 'number' | 'email' | 'date' | 'select';
-  validation?: z.ZodTypeAny;
-  options?: SelectOption[];
-};
-
-export type DashboardCard = {
-  title: string;
-  value: string | number;
-  icon: React.ReactNode;
-};
-
-export type GenericViewProps<T extends z.ZodTypeAny> = {
-  schema: T;
-  fields: Field<z.infer<T>>[];
-  viewType: ViewType;
-  data: z.infer<T> | z.infer<T>[];
-  onSave?: (data: z.infer<T>) => void;
-  dashboardCards?: DashboardCard[];
-};
-```
-
-### LayoutBuilder Props
-
-The `LayoutBuilder` component is configured using the `LayoutConfig` interface.
-
-- **siteName**: `string` - The name of your site.
-- **logo**: `string` - The path to your site's logo image.
-- **navItems**: `NavItem[]` - An array of navigation items.
-- **userMenuItems**: `UserMenuItem[]` - An array of user menu items.
-- **font**: `typeof inter` (optional) - Custom font configuration.
-
-```typescript
-// types/createClient.ts
-
-import { ReactNode } from 'react';
-
-export interface NavItem {
-  label: string;
-  href: string;
-  icon: ReactNode;
-}
-
-export interface UserMenuItem {
-  label: string;
-  onClick: () => void;
-}
-
-export interface LayoutConfig {
-  siteName: string;
-  logo: string;
-  navItems: NavItem[];
-  userMenuItems: UserMenuItem[];
-  font?: typeof inter;
-}
-```
-
-### useToast Hook
-
-The `useToast` hook provides a way to manage and display toast notifications.
-
-#### Methods
-
-- **toast({ title, description, action }): Toast**
-
-  Displays a new toast notification.
-
-  ```typescript
-  const { toast } = useToast();
-
-  const showToast = () => {
-    toast({
-      title: 'Notification',
-      description: 'This is a sample toast notification.',
-      // Add more properties as needed
-    });
-  };
-  ```
-
-- **dismiss(toastId?: string): void**
-
-  Dismisses a specific toast or all toasts if no ID is provided.
-
-  ```typescript
-  dismiss(); // Dismiss all toasts
-  dismiss('toast-id'); // Dismiss a specific toast
-  ```
 
 #### Type Definitions
 
@@ -706,117 +392,7 @@ const UserDashboard: React.FC = () => {
 export default UserDashboard;
 ```
 
-### Using GenericView
 
-```typescript
-// src/components/UserListView.tsx
-'use client';
-
-import React from 'react';
-import { GenericView } from 'nextjs-generic-views';
-import * as z from 'zod';
-import { Field, DashboardCard } from 'nextjs-generic-views/types/genericView';
-import { SomeIcon, AnotherIcon } from 'lucide-react';
-
-// Define your data schema using Zod
-const userSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  email: z.string().email(),
-  // Add other fields as needed
-});
-
-// Define fields for the GenericView
-const fields: Field<typeof userSchema>[] = [
-  { name: 'name', label: 'Name', type: 'text' },
-  { name: 'email', label: 'Email', type: 'email' },
-  // Add other fields as needed
-];
-
-// Define dashboard cards
-const dashboardCards: DashboardCard[] = [
-  { title: 'Total Users', value: 1500, icon: <SomeIcon /> },
-  { title: 'Active Users', value: 1234, icon: <AnotherIcon /> },
-  // Add more cards as needed
-];
-
-// Example data
-const data = [
-  { id: '1', name: 'Alice', email: 'alice@example.com' },
-  { id: '2', name: 'Bob', email: 'bob@example.com' },
-  // Add more data as needed
-];
-
-const UserListView: React.FC = () => {
-  const handleSave = (updatedData: typeof userSchema._output) => {
-    console.log('Data saved:', updatedData);
-    // Implement your save logic here
-  };
-
-  return (
-    <GenericView
-      schema={userSchema}
-      fields={fields}
-      viewType="list"
-      data={data}
-      onSave={handleSave}
-      dashboardCards={dashboardCards}
-    />
-  );
-};
-
-export default UserListView;
-```
-
-### Using LayoutBuilder
-
-```typescript
-// src/components/AppLayout.tsx
-'use client';
-
-import React from 'react';
-import LayoutBuilder from 'nextjs-generic-views/components/genericLayout';
-import layoutConfig from '@/config/layoutConfig';
-
-const layoutBuilder = new LayoutBuilder(layoutConfig);
-
-const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <layoutBuilder.Layout>{children}</layoutBuilder.Layout>;
-};
-
-export default AppLayout;
-```
-
-### Using useToast Hook
-
-```typescript
-// src/components/NotificationExample.tsx
-'use client';
-
-import React from 'react';
-import { useToast } from 'nextjs-generic-views';
-import { Button } from '@/components/ui/button';
-
-const NotificationExample: React.FC = () => {
-  const { toast } = useToast();
-
-  const showToast = () => {
-    toast({
-      title: 'Notification',
-      description: 'This is a sample toast notification.',
-      // Add more properties as needed
-    });
-  };
-
-  return (
-    <div>
-      <Button onClick={showToast}>Show Toast</Button>
-    </div>
-  );
-};
-
-export default NotificationExample;
-```
 
 ## Contributing
 
@@ -833,8 +409,6 @@ Please ensure that your code adheres to the existing style and passes all tests.
 ## License
 
 This project is licensed under the [ISC License](LICENSE).
-
-
 
 
 # MySingle API Client for Next.JS
