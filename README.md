@@ -5,7 +5,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/Br0therDan/mysingle-api-client)](https://github.com/Br0therDan/mysingle-api-client/issues)
 [![GitHub stars](https://img.shields.io/github/stars/Br0therDan/mysingle-api-client?style=social)](https://github.com/Br0therDan/mysingle-api-client)
 
-MySingle Next.JS Generic Toolkit is a versatile and reusable library designed to streamline API interactions and UI component management in Next.js applications. It provides a robust and type-safe API client for handling authentication, token management, and CRUD operations, along with flexible UI components like `GenericView`, `LayoutBuilder`, and a custom `useToast` hook for notifications.
+MySingle API Client is a versatile and reusable library designed to simplify API interactions and UI component management in Next.js applications. It provides a robust and type-safe API client for handling authentication, token management, and CRUD operations, along with flexible UI components like the separately available `GenericView` and `LayoutBuilder`, and custom `useToast` hooks for notifications to quickly implement web applications.
 
 ## Table of Contents
 
@@ -403,7 +403,7 @@ This project is licensed under the [MIT License](LICENSE).
 [![깃허브 이슈](https://img.shields.io/github/issues/Br0therDan/mysingle-api-client)](https://github.com/Br0therDan/mysingle-api-client/issues)
 [![깃허브 스타](https://img.shields.io/github/stars/Br0therDan/mysingle-api-client?style=social)](https://github.com/Br0therDan/mysingle-api-client)
 
-MySingle Next.JS Generic Toolkit은 Next.js 애플리케이션에서 API 상호작용 및 UI 컴포넌트 관리를 간소화하기 위해 설계된 다재다능하고 재사용 가능한 라이브러리입니다. 인증, 토큰 관리 및 CRUD 작업을 처리하기 위한 견고하고 타입 안전한 API 클라이언트와 함께, `GenericView`, `LayoutBuilder` 같은 유연한 UI 컴포넌트 및 알림을 위한 커스텀 `useToast` 훅을 제공합니다.
+MySingle API Client 는 Next.js 애플리케이션에서 API 상호작용 및 UI 컴포넌트 관리를 간소화하기 위해 설계된 다재다능하고 재사용 가능한 라이브러리입니다. 인증, 토큰 관리 및 CRUD 작업을 처리하기 위한 견고하고 타입 안전한 API 클라이언트와 함께, 별도로 제공되는  `GenericView`, `LayoutBuilder` 같은 유연한 UI 컴포넌트 및 알림을 위한 커스텀 `useToast` 훅을 통해 빠르게 웹 애플리케이션을 구현하도록 합니다ㅣ.
 
 ## 목차
 
