@@ -1,14 +1,13 @@
 {
   "name": "@mysingle/api-client",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "private": false,
   "scripts": {
     "build": "tsc",
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "rm -rf dist && npm run build",
-    "publish": "npm publish --access public"
+    "publish": "rm -rf dist && npm run build && npm publish --access public"
   },
   "dependencies": {
     "axios": "^1.7.7",

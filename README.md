@@ -20,25 +20,11 @@ MySingle Next.JS Generic Toolkit is a versatile and reusable library designed to
     - [Creating an API Client](#creating-an-api-client)
     - [Server-Side Usage](#server-side-usage)
     - [Client-Side Usage](#client-side-usage)
-  - [GenericView Component](#genericview-component)
-    - [Props](#props)
-    - [Usage Example](#usage-example)
-  - [LayoutBuilder Component](#layoutbuilder-component)
-    - [Configuration](#configuration-1)
-    - [Usage Example](#usage-example-1)
-  - [useToast Hook](#usetostachook)
-    - [Usage Example](#toast-usage-example)
 - [API Reference](#api-reference)
   - [ApiClient Methods](#apiclient-methods)
-  - [GenericView Props](#genericview-props)
-  - [LayoutBuilder Props](#layoutbuilder-props)
-  - [useToast Hook](#usetostachook-1)
 - [Examples](#examples)
   - [Login Example](#login-example)
   - [Fetching User Data](#fetching-user-data)
-  - [Using GenericView](#using-genericview)
-  - [Using LayoutBuilder](#using-layoutbuilder)
-  - [Using useToast Hook](#using-usetostachook)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -408,15 +394,15 @@ Please ensure that your code adheres to the existing style and passes all tests.
 
 ## License
 
-This project is licensed under the [ISC License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 
 # MySingle API Client for Next.JS
 
-[![npm 버전](https://img.shields.io/npm/v/nextjs-generic-views)](https://www.npmjs.com/package/nextjs-generic-views)
-[![라이선스](https://img.shields.io/npm/l/nextjs-generic-views)](LICENSE)
-[![GitHub 이슈](https://img.shields.io/github/issues/Br0therDan/react-generic-view)](https://github.com/Br0therDan/react-generic-view/issues)
-[![GitHub 스타](https://img.shields.io/github/stars/Br0therDan/react-generic-view?style=social)](https://github.com/Br0therDan/react-generic-view)
+[![npm 버전](https://img.shields.io/npm/v/@mysingle/api-client)](https://www.npmjs.com/package/@mysingle/api-client)
+[![라이선스](https://img.shields.io/npm/l/@mysingle/api-client)](LICENSE)
+[![깃허브 이슈](https://img.shields.io/github/issues/Br0therDan/mysingle-api-client)](https://github.com/Br0therDan/mysingle-api-client/issues)
+[![깃허브 스타](https://img.shields.io/github/stars/Br0therDan/mysingle-api-client?style=social)](https://github.com/Br0therDan/mysingle-api-client)
 
 MySingle Next.JS Generic Toolkit은 Next.js 애플리케이션에서 API 상호작용 및 UI 컴포넌트 관리를 간소화하기 위해 설계된 다재다능하고 재사용 가능한 라이브러리입니다. 인증, 토큰 관리 및 CRUD 작업을 처리하기 위한 견고하고 타입 안전한 API 클라이언트와 함께, `GenericView`, `LayoutBuilder` 같은 유연한 UI 컴포넌트 및 알림을 위한 커스텀 `useToast` 훅을 제공합니다.
 
@@ -427,31 +413,16 @@ MySingle Next.JS Generic Toolkit은 Next.js 애플리케이션에서 API 상호�
 - [구성](#구성)
   - [환경 변수](#환경-변수)
   - [ApiConfig](#apiconfig)
-  - [LayoutConfig](#layoutconfig)
 - [사용법](#사용법)
   - [API 클라이언트](#api-클라이언트)
     - [API 클라이언트 생성](#api-클라이언트-생성)
     - [서버 사이드 사용](#서버-사이드-사용)
     - [클라이언트 사이드 사용](#클라이언트-사이드-사용)
-  - [GenericView 컴포넌트](#genericview-컴포넌트)
-    - [Props](#props)
-    - [사용 예시](#사용-예시)
-  - [LayoutBuilder 컴포넌트](#layoutbuilder-컴포넌트)
-    - [구성](#구성-1)
-    - [사용 예시](#사용-예시-1)
-  - [useToast 훅](#usetostachook)
-    - [사용 예시](#toast-사용-예시)
 - [API 참조](#api-참조)
   - [ApiClient 메서드](#apiclient-메서드)
-  - [GenericView Props](#genericview-props)
-  - [LayoutBuilder Props](#layoutbuilder-props)
-  - [useToast 훅](#usetostachook-1)
 - [예제](#예제)
   - [로그인 예제](#로그인-예제)
   - [사용자 데이터 가져오기](#사용자-데이터-가져오기)
-  - [GenericView 사용](#genericview-사용)
-  - [LayoutBuilder 사용](#layoutbuilder-사용)
-  - [useToast 훅 사용](#usetostachook-사용)
 - [기여](#기여)
 - [라이선스](#라이선스)
 
@@ -698,9 +669,9 @@ export interface CustomAxiosRequestConfig extends AxiosRequestConfig {
 }
 ```
 
-## Examples
+## 예제
 
-### Login Example
+### 로그인 예제
 
 ```typescript
 // src/components/LoginForm.tsx
@@ -801,7 +772,7 @@ const UserDashboard: React.FC = () => {
 export default UserDashboard;
 ```
 
-## Contributing
+## 기여하기
 
 Contributions are welcome! Please follow these steps to contribute:
 
@@ -813,6 +784,6 @@ Contributions are welcome! Please follow these steps to contribute:
 
 Please ensure that your code adheres to the existing style and passes all tests.
 
-## License
+## 라이선스
 
-This project is licensed under the [ISC License](LICENSE).
+이 프로젝트의 사용권은 [MIT License](LICENSE) 라이선스를 따릅니다.
