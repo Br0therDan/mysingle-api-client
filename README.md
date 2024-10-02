@@ -14,7 +14,6 @@ MySingle Next.JS Generic Toolkit is a versatile and reusable library designed to
 - [Configuration](#configuration)
   - [Environment Variables](#environment-variables)
   - [ApiConfig](#apiconfig)
-  - [LayoutConfig](#layoutconfig)
 - [Usage](#usage)
   - [API Client](#api-client)
     - [Creating an API Client](#creating-an-api-client)
