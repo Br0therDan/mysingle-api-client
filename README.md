@@ -780,7 +780,7 @@ export default UserDashboard;
 
 ## 기여하기
 
-Contributions are welcome! Please follow these steps to contribute:
+기여를 환영합니다! 다음 단계에 따라 기여해 주세요:
 
 1. Fork the repository.
 2. Create a new branch: `git checkout -b feature/YourFeature`.
@@ -788,7 +788,7 @@ Contributions are welcome! Please follow these steps to contribute:
 4. Push to the branch: `git push origin feature/YourFeature`.
 5. Open a pull request.
 
-Please ensure that your code adheres to the existing style and passes all tests.
+코드가 기존 스타일을 준수하고 모든 테스트를 통과했는지 확인하세요.
 
 ## 라이선스
 
