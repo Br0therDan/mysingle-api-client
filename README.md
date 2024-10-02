@@ -1,9 +1,14 @@
-# MySingle API Client for Next.JS
+
+
+###### EN
+# MySingle API Client for Next.JS 
+
 
 [![npm version](https://img.shields.io/npm/v/@mysingle/api-client)](https://www.npmjs.com/package/@mysingle/api-client)
 [![License](https://img.shields.io/npm/l/@mysingle/api-client)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/Br0therDan/mysingle-api-client)](https://github.com/Br0therDan/mysingle-api-client/issues)
 [![GitHub stars](https://img.shields.io/github/stars/Br0therDan/mysingle-api-client?style=social)](https://github.com/Br0therDan/mysingle-api-client)
+[한국어](#ko)
 
 MySingle API Client is a versatile and reusable library designed to simplify API interactions and UI component management in Next.js applications. It provides a robust and type-safe API client for handling authentication, token management, and CRUD operations, along with flexible UI components like the separately available `GenericView` and `LayoutBuilder`, and custom `useToast` hooks for notifications to quickly implement web applications.
 
@@ -396,12 +401,14 @@ Please ensure that your code adheres to the existing style and passes all tests.
 This project is licensed under the [MIT License](LICENSE).
 
 
+###### KO
 # MySingle API Client for Next.JS
 
 [![npm 버전](https://img.shields.io/npm/v/@mysingle/api-client)](https://www.npmjs.com/package/@mysingle/api-client)
 [![라이선스](https://img.shields.io/npm/l/@mysingle/api-client)](LICENSE)
 [![깃허브 이슈](https://img.shields.io/github/issues/Br0therDan/mysingle-api-client)](https://github.com/Br0therDan/mysingle-api-client/issues)
 [![깃허브 스타](https://img.shields.io/github/stars/Br0therDan/mysingle-api-client?style=social)](https://github.com/Br0therDan/mysingle-api-client)
+[English](#en)
 
 MySingle API Client 는 Next.js 애플리케이션에서 API 상호작용 및 UI 컴포넌트 관리를 간소화하기 위해 설계된 다재다능하고 재사용 가능한 라이브러리입니다. 인증, 토큰 관리 및 CRUD 작업을 처리하기 위한 견고하고 타입 안전한 API 클라이언트와 함께, 별도로 제공되는  `GenericView`, `LayoutBuilder` 같은 유연한 UI 컴포넌트 및 알림을 위한 커스텀 `useToast` 훅을 통해 빠르게 웹 애플리케이션을 구현하도록 합니다ㅣ.
 
