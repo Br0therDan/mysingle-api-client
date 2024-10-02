@@ -1,9 +1,9 @@
 # MySingle API Client for Next.JS
 
-[![npm version](https://img.shields.io/npm/v/nextjs-generic-views)](https://www.npmjs.com/package/nextjs-generic-views)
-[![License](https://img.shields.io/npm/l/nextjs-generic-views)](LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/Br0therDan/react-generic-view)](https://github.com/Br0therDan/react-generic-view/issues)
-[![GitHub stars](https://img.shields.io/github/stars/Br0therDan/react-generic-view?style=social)](https://github.com/Br0therDan/react-generic-view)
+[![npm version](https://img.shields.io/npm/v/@mysingle/api-client)](https://www.npmjs.com/package/@mysingle/api-client)
+[![License](https://img.shields.io/npm/l/@mysingle/api-client)](LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/Br0therDan/mysingle-api-client)](https://github.com/Br0therDan/mysingle-api-client/issues)
+[![GitHub stars](https://img.shields.io/github/stars/Br0therDan/mysingle-api-client?style=social)](https://github.com/Br0therDan/mysingle-api-client)
 
 MySingle Next.JS Generic Toolkit is a versatile and reusable library designed to streamline API interactions and UI component management in Next.js applications. It provides a robust and type-safe API client for handling authentication, token management, and CRUD operations, along with flexible UI components like `GenericView`, `LayoutBuilder`, and a custom `useToast` hook for notifications.
 
@@ -837,7 +837,7 @@ This project is licensed under the [ISC License](LICENSE).
 
 
 
-# MySingle Next.JS Generic Toolkit
+# MySingle API Client for Next.JS
 
 [![npm 버전](https://img.shields.io/npm/v/nextjs-generic-views)](https://www.npmjs.com/package/nextjs-generic-views)
 [![라이선스](https://img.shields.io/npm/l/nextjs-generic-views)](LICENSE)

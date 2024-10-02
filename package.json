@@ -1,15 +1,14 @@
 {
   "name": "@mysingle/api-client",
-  "version": "0.1.4",
+  "version": "0.1.8",
   "private": false,
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build",
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rm -rf dist",
-    "publish": "npm run clean && npm run prepare && npm publish --access public"
+    "prepare": "rm -rf dist && npm run build",
+    "publish": "npm publish --access public"
   },
   "dependencies": {
     "axios": "^1.7.7",
@@ -51,5 +50,5 @@
   "bugs": {
     "url": "https://github.com/Br0therDan/mysingle-api-client.git"
   },
-  "homepage": "https://github.com/Br0therDan/mysingle-api-client.gitw#readme"
+  "homepage": "https://github.com/Br0therDan/mysingle-api-client#readme"
 }
