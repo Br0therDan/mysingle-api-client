@@ -1,4 +1,5 @@
-// ApiClient.ts
+// src/utils/mysingle/createClient.ts
+
 import axios, { AxiosInstance, AxiosError } from 'axios';
 import { cookies } from 'next/headers';
 import {
@@ -14,7 +15,7 @@ import { Environment } from '@/types/createClient';
 type CookiesType = ReturnType<typeof cookies>;
 
 // API 클라이언트 클래스
-class ApiClient {
+export class ApiClient {
 
   private axiosInstance: AxiosInstance;     // Axios 인스턴스
   private config: ApiConfig;                // API 설정

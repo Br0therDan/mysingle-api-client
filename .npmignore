@@ -1,0 +1,49 @@
+# .npmignore
+
+# 소스 코드 폴더 제외 (패키지에는 빌드된 파일만 포함)
+
+
+# TypeScript 설정 파일 제외
+tsconfig.json
+tsconfig.tsbuildinfo
+tsup.config.ts
+
+# 빌드 스크립트 및 설정 파일 제외
+build/
+scripts/
+
+# 테스트 관련 폴더 및 파일 제외
+test/
+tests/
+__tests__/
+coverage/
+
+# 환경설정 파일 제외
+.env
+.env.local
+.env.*.local
+
+# 노드 모듈 폴더 제외
+node_modules/
+
+
+# Git 관련 파일 제외
+.git
+.gitignore
+
+# 기타 불필요한 파일 제외
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn.lock
+package-lock.json
+*.log
+*.log
+*.tsbuildinfo
+*.npmignore
+.gitignore
+*.mjs
+
+# IDE 및 에디터 설정 파일 제외
+.vscode/
+.idea/

@@ -1,3 +1,5 @@
+// src/config/apiConfig.ts
+
 import { ApiConfig, Environment } from '@/types/createClient';
 
 export const apiConfig: ApiConfig = {
